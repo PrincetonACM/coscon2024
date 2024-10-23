@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css">
     <style>
         body {
-            margin: 0 5%;
-            padding: 0 5%;
+            margin: 0 5% 1rem 5%;
+            padding: 0 5% 1rem 5%;
         }
         .countdown-container {
             width: 100%;
@@ -57,16 +57,12 @@
 
     <h3> Welcome to the competition homepage for COSCON 2024!</h3>
 
-    <!-- Countdown container -->
     <div class="countdown-container">
         <div id="flipdown" class="flipdown"></div>
     </div>
-
-    <!-- Include FlipDown JS -->
     <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.js"></script>
-    
     <script>
-        const countdownDate = new Date("2024-11-16T12:00:00-0400").getTime() / 1000;
+        const countdownDate = new Date("2024-11-17T12:00:00-0400").getTime() / 1000;
         const flipdown = new FlipDown(countdownDate, {
             theme: 'dark'
         }).start();
@@ -84,7 +80,7 @@
     <div class="row align-items-start">
         <div class="col">
             <p class="lead">Schedule for COSCON.</p>
-            COSCON will be held on November 16th, 2024. Schedule and location are TBD.
+            COSCON will be held on Sunday, November 17th, 2024. Schedule and location are TBD.
         </div>
         <div class="col">
             <p class="lead">Problems.</p>
