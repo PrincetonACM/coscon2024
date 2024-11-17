@@ -12,6 +12,9 @@
             color: #ffffff;
             margin: 0;
             padding: 0;
+        }
+
+        .container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,13 +24,14 @@
             width: 80%;
             border-collapse: collapse;
             margin: 20px 0;
-            font-size: 18px;
-            text-align: left;
+            font-size: 14px;
+            text-align: center;
         }
 
         th, td {
-            padding: 12px 15px;
+            padding: 10px 10px;
             border: 1px solid #ffffff;
+            text-align: center;
         }
 
         th {
@@ -50,12 +54,17 @@
     </style>
 </head>
 <body>
-
-    <table id="data-table">
-        <caption>COSCON 2024 Live Leaderboard</caption>
-        <thead></thead>
-        <tbody></tbody>
-    </table>
+    <div style="text-align: center;">
+        <h1>COSCON 2024 Live Leaderboard</h1>
+        <p>Note: There may be delays in grading submissions. If you feel like a substantial
+            amount of time has passed since you submitted, please let us know in Discord</p>
+    </div>
+    <div class="container">
+        <table id="data-table">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
     <script>
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRW2o6bLBc_7uK4bjPOv5RBfRsfyef41FnYVfrV4gJTptqYxgma74_1MX9HoIs8OFXfoqT57slTR71Y/pub?gid=0&single=true&output=csv';
@@ -69,7 +78,7 @@
                 // Parse CSV data into rows and columns
                 let rows = data.split("\n").map(row => row.split(","));
                 rows = rows.slice(1).sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
-                rows.unshift(['Rank', 'Team Name', 'P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'Total']);  // Add back header row
+                rows.unshift(['Rank', 'Team_ID', '1', '2', '3', '4.1', '4.2', '4.3', '5.1a', '5.1b', '5.2a', '5.2b', '6', '7', '8.1', '8.2', '8.3', '9', '10', '10.1', '11', '11.1', '11.2', 'A.1', 'A.2', 'A.3', 'B.1', 'B.2', 'B.3', 'Total']);  // Add back header row
 
                 // Clear existing table content
                 const thead = document.querySelector("#data-table thead");
